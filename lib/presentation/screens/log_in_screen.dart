@@ -20,6 +20,7 @@ class LogInScreen extends StatelessWidget {
     return SafeArea(
       child: BlocProvider(
         create: (context) => LoginCubit(),
+        //Error is :The name parameter 'builder' is required but ,but theres no corresponding argument.المهندس ما ضاف builder في الشرح
         child: BlocConsumer<LoginCubit, LoginState>(
          
           listener: (context, state) {
@@ -39,7 +40,7 @@ class LogInScreen extends StatelessWidget {
               
             }
           },
-
+        //The named parameter 'child ' isn't defined.Try correcting the name to an existing named parameter's name, or defining a named parameter with the name 'child'.
           child: Scaffold(
             backgroundColor: ColorManager.primaryColor,
             body: Padding(
