@@ -27,7 +27,8 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           fillColor: ColorManager.txtFeildColor,
           filled: true,
           border: InputBorder.none,
-          hintText:widget.hintTxt,
+          hintText:widget.hintTxt, 
+        
 
 
         ),
