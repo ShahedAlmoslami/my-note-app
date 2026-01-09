@@ -10,6 +10,7 @@ class SignUpCubit extends Cubit <SignUpState>{
       email: userEmail,
       password:userPass
     );
+    emit(SignUpSuccessState());
    }
     catch(e){
       emit(SignUpErrorState(e.toString()));

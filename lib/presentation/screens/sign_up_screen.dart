@@ -22,8 +22,6 @@ class SignUpScreen extends StatelessWidget {
         create: (context) => SignUpCubit(),
         child: BlocConsumer<SignUpCubit, SignUpState>(
           listener: (context, state) {
-            
-            
             if (state is SignUpSuccessState) {
               Navigator.push(context, MaterialPageRoute(builder: (context) => LogInScreen()));
             }
@@ -40,12 +38,12 @@ class SignUpScreen extends StatelessWidget {
             return Scaffold(
               backgroundColor: ColorManager.primaryColor,
               body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                padding: const EdgeInsets.all(16.0),
+                child: ListView(
+                  
                   children: [
                     const SizedBox(height: 40),
-
+                
                     Center(
                       child: Text(
                         Txt.createAcc,
@@ -57,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-
+                
                     Text(
                       Txt.email,
                       style: const TextStyle(
@@ -68,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     TextFormFieldWidget(controller: emailController, hintTxt: Txt.emailHint),
                     const SizedBox(height: 16),
-
+                
                     Text(
                       Txt.pass,
                       style: const TextStyle(

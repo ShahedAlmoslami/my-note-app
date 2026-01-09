@@ -10,6 +10,11 @@ class Txt {
   static String login="Login";
   static String continuewithgoogle="Continue With Google";
   static String haveAcc="Don’t have an account ? ";
+  static String logOut="Log Out";
+  static String createNewNote="Create New Note";
+
+
+
 
 
 
