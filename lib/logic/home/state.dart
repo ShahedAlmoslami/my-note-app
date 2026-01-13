@@ -24,12 +24,5 @@ class DeleteErrorStat extends HomeState {
   DeleteErrorStat({ required this.em});
 
 }
-Future deleteNote (String noteId)async{
-  try{
- await FirebaseFirestore.instance.collection('notes').doc(noteId).delete();
- emit.DeleteSuccessStat();
-  }
-   catch(e){
-    emit.DeleteErrorStat(em: e.toString());
-  }
-}
+
+

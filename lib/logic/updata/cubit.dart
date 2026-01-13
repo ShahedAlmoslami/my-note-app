@@ -7,7 +7,7 @@ class UpdateNoteCubit extends Cubit<UpdateNoteState> {
   Future updateNote({required NoteModel note,required String noteId})async{
     emit(UpdateNoteLoadingState());
     try{
-      await FirebaseFirestore.instance.collection("notes").doc(noteId).update(note.toJson());
+      await FirebaseFirestore.instance.collection("note").doc(noteId).update(note.toJson());
       // Your logic to Update a note goes here.
       emit(UpdateNoteSuccessState());
     }

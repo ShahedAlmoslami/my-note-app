@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'presentation/screens/log_in_screen.dart';
-import 'presentation/screens/create_note_screen.dart';
 import 'presentation/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   final bool logIn = prefs.getBool('isLoggedIn') ?? false;
-  runApp( MyApp(x:logIn));
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: [Locale('en'), Locale('ar')],
+      path: 'assets/translations', // <-- change the path of the translation files 
+      fallbackLocale: Locale('en'),
+      child: MyApp(x: logIn,)
+    ),
+  );
   
 
 }
@@ -25,4 +34,4 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
      home:x? HomeScreen(): LogInScreen());
   }
-}  
+}

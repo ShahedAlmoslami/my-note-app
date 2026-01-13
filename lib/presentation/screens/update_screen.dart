@@ -165,7 +165,7 @@ Navigator.of(context).pop();
                     SizedBox(height: 5),
                    
                 
-                    (state is CreateNoteLoadingState)?CircularProgressIndicator():  InkWell(
+                    (state is UpdateNoteLoadingState)?CircularProgressIndicator():  InkWell(
                       child: ContainerWidget(buttonTxt: 'Update', buttonhight: 48, buttonwidth: 318),
                     
                       onTap:(){
